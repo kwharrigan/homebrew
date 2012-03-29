@@ -10,11 +10,11 @@ class Vte < Formula
   depends_on 'gettext'
   depends_on 'glib'
   depends_on 'gtk+'
+  depends_on 'pygobject'
 
   def install
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
-                          "--disable-python",
                           "--disable-Bsymbolic"
     system "make install"
   end
