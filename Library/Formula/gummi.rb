@@ -8,17 +8,12 @@ class Gummi < Formula
   url 'http://dev.midnightcoding.org/attachments/download/263/gummi-0.6.3.tar.gz'
   md5 '6d02259d237c35c149d6a5f61f76ad3e'
 
-  # depends_on 'cmake' => :build
   depends_on 'gettext'
-  depends_on 'gtksourceview'
+  #depends_on 'gtksourceview'
 
   def install
-    # ENV.x11 # if your formula requires any X11 headers
-    # ENV.j1  # if your formula's build system can't parallelize
-
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
-    # system "cmake . #{std_cmake_parameters}"
     system "make install" # if this fails, try separate make/make install steps
   end
 
